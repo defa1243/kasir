@@ -34,7 +34,7 @@
                     </a>
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-copy"></i>
+                    <i class="fas fa-coffee"></i>
                         <p>
                             Master Data
                             <i class="fas fa-angle-left right"></i>
@@ -57,7 +57,7 @@
                 </li>
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-copy"></i>
+                        <i class="fas fa-shopping-cart"></i>
                         <p>
                             Transactional Data
                             <i class="fas fa-angle-left right"></i>
@@ -74,16 +74,21 @@
                 </li>
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
-                        <i class="fas fa-fw fa-folder"></i>
+                        <i class="fas fa-fw fa-copy"></i>
                         <p>
                             laporan
-                            <i class="fas fa-angle-left right"></i>
                         </p>
                     </a>
                         <li class="nav-item">
                             <a href="pages/examples/profile.html" class="nav-link">
-                                <i class="fas fa-sign-out-alt fa-lg"></i>
+                                <i class="fas fa-user fa-lg"></i>
                                 <p>Profile</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="logout.php" class="nav-link">
+                                <i class="fas fa-sign-out-alt fa-lg"></i>
+                                <p>Logout</p>
                             </a>
                         </li>
             </ul>

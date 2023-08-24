@@ -29,7 +29,7 @@ include '../include/sidebar.php';
             <p class="">Americano</p>
         </div>
         <div class="icon">
-            <i class="ion ion-bag"></i>
+            <i class="fas fa-mug-hot"></i>
         </div>
         <a href="#" class="small-box-footer">Rp.16.000,00-<i class="fas fa-arrow-circle-right"></i></a>
     </div>
@@ -43,7 +43,7 @@ include '../include/sidebar.php';
             <p class="">Americano</p>
         </div>
         <div class="icon">
-            <i class="ion ion-bag"></i>
+            <i class="fas fa-mug-hot"></i>
         </div>
         <a href="#" class="small-box-footer">Rp.16.000,00-<i class="fas fa-arrow-circle-right"></i></a>
     </div>
@@ -56,7 +56,7 @@ include '../include/sidebar.php';
             <p class="">Americano</p>
         </div>
         <div class="icon">
-            <i class="ion ion-bag"></i>
+            <i class="fas fa-mug-hot"></i>
         </div>
         <a href="#" class="small-box-footer">Rp.16.000,00-<i class="fas fa-arrow-circle-right"></i></a>
     </div>
@@ -69,7 +69,7 @@ include '../include/sidebar.php';
             <p class="">Americano</p>
         </div>
         <div class="icon">
-            <i class="ion ion-bag"></i>
+            <i class="fas fa-mug-hot"></i>
         </div>
         <a href="#" class="small-box-footer">Rp.16.000,00-<i class="fas fa-arrow-circle-right"></i></a>
     </div>
@@ -81,7 +81,7 @@ include '../include/sidebar.php';
             <p class="">Americano</p>
         </div>
         <div class="icon">
-            <i class="ion ion-bag"></i>
+            <i class="fas fa-mug-hot"></i>
         </div>
         <a href="#" class="small-box-footer">Rp.16.000,00-<i class="fas fa-arrow-circle-right"></i></a>
     </div>
@@ -95,7 +95,7 @@ include '../include/sidebar.php';
             <p class="">Americano</p>
         </div>
         <div class="icon">
-            <i class="ion ion-bag"></i>
+            <i class="fas fa-mug-hot"></i>
         </div>
         <a href="#" class="small-box-footer">Rp.16.000,00-<i class="fas fa-arrow-circle-right"></i></a>
     </div>
@@ -108,7 +108,7 @@ include '../include/sidebar.php';
             <p class="">Americano</p>
         </div>
         <div class="icon">
-            <i class="ion ion-bag"></i>
+            <i class="fas fa-mug-hot"></i>
         </div>
         <a href="#" class="small-box-footer">Rp.16.000,00-<i class="fas fa-arrow-circle-right"></i></a>
     </div>
@@ -121,7 +121,7 @@ include '../include/sidebar.php';
             <p class="">Americano</p>
         </div>
         <div class="icon">
-            <i class="ion ion-bag"></i>
+            <i class="fas fa-mug-hot"></i>
         </div>
         <a href="#" class="small-box-footer">Rp.16.000,00-<i class="fas fa-arrow-circle-right"></i></a>
     </div>
