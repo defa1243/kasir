@@ -2,9 +2,7 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="index3.html" class="brand-link">
-        <img src="http://localhost/kasir/assets/images/logo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
-            style="opacity: .8">
-        <span class="brand-text font-weight-light">Kasir Demo</span>
+        <span class="brand-text text-primary text-bold">現金係Sero</span>
     </a>
 
     <!-- Sidebar -->
@@ -25,11 +23,10 @@
                 <!-- Add icons to the links using the .nav-icon class
                 with font-awesome or any other icon font library -->
                 <li class="nav-item">
-                    <a href="#" class="nav-link active">
-                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                    <a href="index.php?page=dashboard" class="nav-link active">
+                    <i class="nav-icon fas fa-cash-register"></i>
                         <p>
                             Dashboard
-                            <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
                 <li class="nav-item has-treeview">
@@ -48,7 +45,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="pages/layout/top-nav-sidebar.html" class="nav-link">
+                            <a href="index.php?page=menu" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>menu</p>
                             </a>
@@ -72,13 +69,12 @@
                         </li>
                     </ul>
                 </li>
-                <li class="nav-item has-treeview">
-                    <a href="#" class="nav-link">
-                        <i class="fas fa-fw fa-copy"></i>
-                        <p>
-                            laporan
-                        </p>
-                    </a>
+                    <li class="nav-item">
+                            <a href="pages/examples/profile.html" class="nav-link">
+                            <i class="fas fa-clipboard fa-lg"></i>
+                        <p>laporan</p>
+                            </a>
+                        </li>
                         <li class="nav-item">
                             <a href="pages/examples/profile.html" class="nav-link">
                                 <i class="fas fa-user fa-lg"></i>
@@ -86,7 +82,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="logout.php" class="nav-link">
+                            <a href="logout.php" class="nav-link logout">
                                 <i class="fas fa-sign-out-alt fa-lg"></i>
                                 <p>Logout</p>
                             </a>
@@ -95,5 +91,6 @@
         </nav>
         <!-- /.sidebar-menu -->
     </div>
+
     <!-- /.sidebar -->
 </aside>

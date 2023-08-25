@@ -26,24 +26,24 @@ require 'database/panggil.php';
             // <!-- Main Content -->
                 if(isset($_GET['page']) && $_GET['page'] == 'home'){
                     require 'pages/dashboard/main.php';
-                // }elseif(isset($_GET['page']) && $_GET['page'] == 'member'){
-                //     require 'act/pages/member/default.php';
-                // }elseif(isset($_GET['page']) && $_GET['page'] == 'list buku'){
-                //     require 'act/pages/list/default.php';
+                }elseif(isset($_GET['page']) && $_GET['page'] == 'user'){
+                    require 'pages/user/default.php';
+                }elseif(isset($_GET['page']) && $_GET['page'] == 'menu'){
+                    require 'pages/menu/default.php';
                 // }elseif(isset($_GET['page']) && $_GET['page'] == 'pengadaan'){
-                //     require 'act/pages/pengadaan/default.php';
+                //     require 'pages/pengadaan/default.php';
                 // }elseif(isset($_GET['page']) && $_GET['page'] == 'penjualan'){
-                //     require 'act/pages/penjualan/default.php';
+                //     require 'pages/penjualan/default.php';
                 // }elseif(isset($_GET['page']) && $_GET['page'] == 'publisher'){
-                //     require 'act/pages/publisher/default.php';
+                //     require 'pages/publisher/default.php';
                 // }elseif(isset($_GET['page']) && $_GET['page'] == 'merk'){
-                //         require 'act/pages/merk/default.php';
+                //         require 'pages/merk/default.php';
                 // }elseif(isset($_GET['page']) && $_GET['page'] == 'petugas'){
-                //     require 'act/pages/user/default.php';
+                //     require 'pages/user/default.php';
                 // }elseif(isset($_GET['page']) && $_GET['page'] == 'satuan'){
-                //     require 'act/pages/satuan/default.php';
+                //     require 'pages/satuan/default.php';
                 // }elseif(isset($_GET['page']) && $_GET['page'] == 'kategori'){
-                //     require 'act/pages/kategori/default.php';
+                //     require 'pages/kategori/default.php';
                 }else{
                     echo '<script>window.location="index.php?page=home"</script>';
                 }

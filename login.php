@@ -30,7 +30,7 @@
         <div class="login-logo">
         <img src="http://localhost/kasir/assets/images/logo.png" alt="logo" width="100"
                                 class="shadow-light rounded-circle">
-            <a href="#" class="text-primary text-bold"><b>kasir</b>Sero</a>
+            <a href="#" class="text-primary muted text-bold">現金係</a>
         </div>
         <!-- /.login-logo -->
         <div class="card">
@@ -62,7 +62,7 @@
                         <input type="text" class="form-control" name="user" placeholder="Username">
                         <div class="input-group-append">
                             <div class="input-group-text">
-                                <span class="fas fa-envelope"></span>
+                                <span class="fas fa-user"></span>
                             </div>
                         </div>
                     </div>
@@ -135,7 +135,7 @@ if(isset($_POST['login']))
             }
         }else{
             // echo "<script>window.location='login.php?get=gagal';</script>";
-            echo "<script>alert('pw salah')</script>";
+            echo "<script>alert('Wrong Password')</script>";
         }
 
         
