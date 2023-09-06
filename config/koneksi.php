@@ -2,7 +2,7 @@
     class Koneksi{
         public function DBConnect(){
 			$dbhost = 'localhost';
-			$dbname = 'kasir';
+			$dbname = 'kasir_sero';
 			$dbuser = 'root';
             $dbpass = ''; 
 
