@@ -1,6 +1,6 @@
 <?php
 if(!empty($_SESSION)){ }else{ session_start(); }
-if(empty($_SESSION['role'] == "" )){}else{ header('location:login.php?logindulu'); }
+// if(empty($_SESSION['role'] == "" )){}else{ header('location:login.php?logindulu'); }
 require 'database/panggil.php';
 ?>
 
@@ -21,6 +21,8 @@ require 'database/panggil.php';
         <?php 
         if(!empty($_GET['page'] == 'menu')){
             require 'pages/menu/main.php';
+        }elseif(!empty($_GET['page'] == 'employee')){
+            require 'pages/employee/main.php';
         }
         ?>
         <!-- /.content-wrapper -->
@@ -33,12 +35,10 @@ require 'database/panggil.php';
     <?php 
         if(!empty($_GET['page'] == 'menu')){
             require 'pages/menu/js.php';
+        }elseif(!empty($_GET['page'] == 'employee')){
+            require 'pages/employee/js.php';
         }
         ?>
 </body>
 
 </html>
-
-
-
-

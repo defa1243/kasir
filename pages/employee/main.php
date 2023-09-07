@@ -17,7 +17,7 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <a href="javascript:void(0)" onclick="createModal()" class="btn btn-primary col-lg-1">Create</a>
+                            <a href="javascript:void(0)" onclick="createModal()" class="btn btn-primary">Create</a>
                             <button type="button" class="btn btn-primary " style="display: none;" id="btn-create" data-toggle="modal"
                                 data-target="#exampleModal">
                                 Launch demo modal

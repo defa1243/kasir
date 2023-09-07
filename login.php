@@ -120,19 +120,22 @@ if(isset($_POST['login']))
         $login = $proses->showData($sql);
 
         if( password_verify($pass, $login['password']) ){
-            if($login['role']=="superadmin"){
-                session_start();
-                $_SESSION['role'] = "superadmin";
-                $_SESSION['sesi'] = $login;
-                echo "<script>window.location='index.php?page=dashboard';</script>";
-                echo "<script>alert('superadmin')</script>";
-            }elseif($login['role']=="admin"){
-                session_start();
-                $_SESSION['role'] = "admin";
-                $_SESSION['sesi'] = $login;
-                echo "<script>window.location='index.php?page=dashboard';</script>";
-                echo "<script>alert('admin')</script>";
-            }
+            $_SESSION['login'] = $login;
+            echo "<script>window.location='index.php?page=dashboard';</script>";
+
+            // if($login['role']=="superadmin"){
+            //     session_start();
+            //     $_SESSION['role'] = "superadmin";
+            //     $_SESSION['sesi'] = $login;
+            //     echo "<script>window.location='index.php?page=dashboard';</script>";
+            //     echo "<script>alert('superadmin')</script>";
+            // }elseif($login['role']=="admin"){
+            //     session_start();
+            //     $_SESSION['role'] = "admin";
+            //     $_SESSION['sesi'] = $login;
+            //     echo "<script>window.location='index.php?page=dashboard';</script>";
+            //     echo "<script>alert('admin')</script>";
+            // }
         }else{
             // echo "<script>window.location='login.php?get=gagal';</script>";
             echo "<script>alert('Wrong Password')</script>";

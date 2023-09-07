@@ -31,7 +31,7 @@ $data = $proses->showData($sql);
                     </div>
                     <div class="mb-3">
                         <label>Price</label>
-                        <input value="<?= $data['price'] ?>" type="text" name="price" class="form-control">
+                        <input value="<?= $data['price'] ?>" type="text" id="formatRupiah" name="price" class="form-control">
                     </div>
                     <div class="mb-3">
                         <label>Information</label>

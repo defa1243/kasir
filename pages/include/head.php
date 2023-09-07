@@ -13,4 +13,6 @@
     <link rel="stylesheet" href="assets/dist/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="assets/dist/css/adminlte.min.css">
+    <!-- toast -->
+    <link rel="stylesheet" href="assets/dist/plugins/toastr/toastr.min.css">
 </head>

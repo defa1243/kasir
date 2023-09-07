@@ -19,6 +19,8 @@
    <script src="assets/dist/js/adminlte.min.js"></script>
    <!-- AdminLTE for demo purposes -->
    <script src="assets/dist/js/demo.js"></script>
+   <script src="assets/dist/js/swal.js"></script>
+   <script src="assets/dist/plugins/toastr/toastr.min.js"></script>
    <!-- Page specific script -->
    <script>
        $(function () {
@@ -31,3 +33,5 @@
        });
 
    </script>
+
+
