@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Oct 05, 2023 at 02:43 PM
+-- Generation Time: Oct 11, 2023 at 10:22 AM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -15,7 +15,7 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- Database: `kasir_sero`
@@ -33,9 +33,9 @@ CREATE TABLE `absent` (
   `date` int NOT NULL,
   `month` int NOT NULL,
   `year` int NOT NULL,
-  `time` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `time` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `info` enum('come in','come out') NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -46,7 +46,7 @@ CREATE TABLE `absent` (
 CREATE TABLE `category` (
   `id_category` bigint NOT NULL,
   `category_type` varchar(40) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `category`
@@ -55,7 +55,8 @@ CREATE TABLE `category` (
 INSERT INTO `category` (`id_category`, `category_type`) VALUES
 (1, 'Food'),
 (2, 'Coffee'),
-(3, 'Non Coffee');
+(3, 'Non Coffee'),
+(4, 'aa');
 
 -- --------------------------------------------------------
 
@@ -67,7 +68,16 @@ CREATE TABLE `daily_report` (
   `id_daily_report` bigint NOT NULL,
   `balance` bigint NOT NULL DEFAULT '0',
   `date` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `daily_report`
+--
+
+INSERT INTO `daily_report` (`id_daily_report`, `balance`, `date`) VALUES
+(1, 130000, '2023-10-06'),
+(2, 150000, '2023-10-09'),
+(3, 0, '2023-10-11');
 
 -- --------------------------------------------------------
 
@@ -81,7 +91,7 @@ CREATE TABLE `employee` (
   `address` varchar(50) NOT NULL,
   `phone_number` bigint NOT NULL,
   `email` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -92,8 +102,16 @@ CREATE TABLE `employee` (
 CREATE TABLE `expense_report` (
   `id_expense_report` bigint NOT NULL,
   `amount` bigint NOT NULL,
-  `information` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+  `information` varchar(255) NOT NULL,
+  `datetime` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `expense_report`
+--
+
+INSERT INTO `expense_report` (`id_expense_report`, `amount`, `information`, `datetime`) VALUES
+(5, 60000, 'biji kopi', '2023-10-11 14:38:21');
 
 -- --------------------------------------------------------
 
@@ -104,10 +122,19 @@ CREATE TABLE `expense_report` (
 CREATE TABLE `menu` (
   `id_menu` bigint NOT NULL,
   `category_id` bigint NOT NULL,
-  `menu_name` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `price` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `information` varchar(255) COLLATE utf8_general_ci DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+  `menu_name` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `price` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `information` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `menu`
+--
+
+INSERT INTO `menu` (`id_menu`, `category_id`, `menu_name`, `price`, `information`) VALUES
+(1, 2, 'Americano', '14000', ''),
+(2, 1, 'frenchhh', '10000', ''),
+(3, 4, 'asdas', '20000', 'ad');
 
 -- --------------------------------------------------------
 
@@ -118,11 +145,22 @@ CREATE TABLE `menu` (
 CREATE TABLE `transaction` (
   `id_transaction` bigint NOT NULL,
   `transaction_code` varchar(20) NOT NULL,
-  `datetime` varchar(30) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
-  `cash` varchar(30) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `datetime` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `cash` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   `total` varchar(30) NOT NULL,
   `change` bigint DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `transaction`
+--
+
+INSERT INTO `transaction` (`id_transaction`, `transaction_code`, `datetime`, `cash`, `total`, `change`) VALUES
+(4, 'SRT001', '2023-10-06 21:02:03', '35000', '34000', 1000),
+(5, 'SRT002', '2023-10-09 10:43:35', '15000', '14000', 1000),
+(6, 'SRT003', '2023-10-10 20:07:30', '16000', '14000', 2000),
+(7, 'SRT004', '2023-10-10 21:24:27', NULL, '34000', NULL),
+(8, 'SRT005', '2023-10-10 21:43:38', '100000', '88000', 12000);
 
 -- --------------------------------------------------------
 
@@ -133,8 +171,8 @@ CREATE TABLE `transaction` (
 CREATE TABLE `transaction_detail` (
   `id_transaction_detail` bigint NOT NULL,
   `menu_id` bigint NOT NULL,
-  `ice` enum('Less Ice','Normal Ice','Extra Ice','No Ice','') CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
-  `sugar` enum('Less Sugar','Normal Sugar','Extra Sugar','No Sugar','') CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `ice` enum('Less Ice','Normal Ice','Extra Ice','No Ice','') CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `sugar` enum('Less Sugar','Normal Sugar','Extra Sugar','No Sugar','') CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   `variation_1` bigint DEFAULT NULL,
   `variation_2` bigint DEFAULT NULL,
   `variation_3` bigint DEFAULT NULL,
@@ -148,7 +186,19 @@ CREATE TABLE `transaction_detail` (
   `price_detail` bigint NOT NULL,
   `qty` bigint NOT NULL,
   `transaction_id` bigint NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `transaction_detail`
+--
+
+INSERT INTO `transaction_detail` (`id_transaction_detail`, `menu_id`, `ice`, `sugar`, `variation_1`, `variation_2`, `variation_3`, `variation_4`, `variation_5`, `variation_6`, `variation_7`, `variation_8`, `variation_9`, `variation_10`, `price_detail`, `qty`, `transaction_id`) VALUES
+(6, 1, 'Normal Ice', 'Normal Sugar', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 14000, 1, 4),
+(7, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 20000, 2, 4),
+(8, 1, 'Normal Ice', 'Normal Sugar', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 14000, 1, 5),
+(9, 1, 'Normal Ice', 'Normal Sugar', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 14000, 1, 6),
+(10, 1, 'Normal Ice', 'Normal Sugar', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 34000, 2, 7),
+(11, 1, 'Normal Ice', 'Normal Sugar', 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 88000, 2, 8);
 
 -- --------------------------------------------------------
 
@@ -161,7 +211,14 @@ CREATE TABLE `variation` (
   `variation_type` varchar(50) NOT NULL,
   `variation_price` bigint NOT NULL,
   `category_id` bigint NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `variation`
+--
+
+INSERT INTO `variation` (`id_variation`, `variation_type`, `variation_price`, `category_id`) VALUES
+(1, 'asd', 3000, 2);
 
 -- --------------------------------------------------------
 
@@ -172,16 +229,16 @@ CREATE TABLE `variation` (
 CREATE TABLE `wallet` (
   `id_wallet` bigint NOT NULL,
   `balance` bigint NOT NULL DEFAULT '0',
-  `date` varchar(30) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `date` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `time` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `wallet`
 --
 
 INSERT INTO `wallet` (`id_wallet`, `balance`, `date`, `time`) VALUES
-(1, 0, '2023-10-05', '21:35:34');
+(1, 220000, '2023-10-11', '14:38:21');
 
 --
 -- Indexes for dumped tables
@@ -276,13 +333,13 @@ ALTER TABLE `absent`
 -- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
-  MODIFY `id_category` bigint NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_category` bigint NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `daily_report`
 --
 ALTER TABLE `daily_report`
-  MODIFY `id_daily_report` bigint NOT NULL AUTO_INCREMENT;
+  MODIFY `id_daily_report` bigint NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `employee`
@@ -294,31 +351,31 @@ ALTER TABLE `employee`
 -- AUTO_INCREMENT for table `expense_report`
 --
 ALTER TABLE `expense_report`
-  MODIFY `id_expense_report` bigint NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_expense_report` bigint NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `menu`
 --
 ALTER TABLE `menu`
-  MODIFY `id_menu` bigint NOT NULL AUTO_INCREMENT;
+  MODIFY `id_menu` bigint NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `transaction`
 --
 ALTER TABLE `transaction`
-  MODIFY `id_transaction` bigint NOT NULL AUTO_INCREMENT;
+  MODIFY `id_transaction` bigint NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `transaction_detail`
 --
 ALTER TABLE `transaction_detail`
-  MODIFY `id_transaction_detail` bigint NOT NULL AUTO_INCREMENT;
+  MODIFY `id_transaction_detail` bigint NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `variation`
 --
 ALTER TABLE `variation`
-  MODIFY `id_variation` bigint NOT NULL AUTO_INCREMENT;
+  MODIFY `id_variation` bigint NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `wallet`
