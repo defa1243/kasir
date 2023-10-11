@@ -22,16 +22,54 @@
    <script src="assets/dist/js/swal.js"></script>
    <script src="assets/dist/plugins/toastr/toastr.min.js"></script>
    <!-- Page specific script -->
+
+   <!-- Dropify -->
+
+
+
+
    <script>
        $(function () {
            $("#example1").DataTable({
                "responsive": true,
                "lengthChange": false,
                "autoWidth": false,
-            //    "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+                  "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
            });
+
        });
-
    </script>
+   
 
+   <div id="txt"></div>
 
+<script>
+startTime();
+
+function startTime() {
+  const today = new Date();
+  let h = today.getHours();
+  let m = today.getMinutes();
+  let s = today.getSeconds();
+  m = checkTime(m);
+  s = checkTime(s);
+  document.getElementById('txt').innerHTML =  h + ":" + m + ":" + s;
+  setTimeout(startTime, 1000);
+}
+
+function checkTime(i) {
+  if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+  return i;
+}
+</script>
+<script>
+  readBalance();
+  function readBalance(){
+    $.get("pages/include/balance.php", {}, function (data, status) {
+      $("#balance").html(data);
+    });
+    $.get("pages/include/wallet.php", {}, function (data, status) {
+      $("#wallet").html(data);
+    });
+  }
+</script>

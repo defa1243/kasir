@@ -1,19 +1,28 @@
+
 <!-- Main Sidebar Container -->
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="index3.html" class="brand-link">
+    <a href="javascript:void(0)" class="brand-link">
         <span class="brand-text text-primary text-bold">現金係Sero</span>
     </a>
 
     <!-- Sidebar -->
     <div class="sidebar">
         <!-- Sidebar user panel (optional) -->
-        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-            <div class="image">
-                <img src="assets/dist/img/logo.png" class="img-circle elevation-2" alt="User Image">
+        <div class="user-panel mt-3 pb-3 mb-3">
+            <div class="row">
+                <div class="image">
+                    <img src="assets/dist/img/logo.png" class="img-circle elevation-2" alt="User Image">
+                </div>
+                <div class="info">
+                    <a href="javascript:void(0)" class="d-block">Ninko</a>
+                </div>
             </div>
-            <div class="info">
-                <a href="#" class="d-block">Ninko</a>
+            <div class="row">
+
+                <div class="info" id="wallet">
+                    
+                </div>
             </div>
         </div>
 
@@ -23,70 +32,76 @@
                 <!-- Add icons to the links using the .nav-icon class
                 with font-awesome or any other icon font library -->
                 <li class="nav-item">
-                    <a href="index.php?page=dashboard" class="nav-link active">
-                    <i class="nav-icon fas fa-cash-register"></i>
+                    <a href="index.php?page=transaction"
+                        class="nav-link <?php if ($_GET['page']=='transaction'){echo "active";} ?>">
+                        <i class="nav-icon fas fa-cash-register"></i>
                         <p>
-                            Dashboard
+                            Transaction
                         </p>
                     </a>
-                <li class="nav-item has-treeview">
-                    <a href="#" class="nav-link">
-                    <i class="fas fa-coffee"></i>
-                        <p>
-                            Master Data
-                            <i class="fas fa-angle-left right"></i>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="pages/layout/top-nav.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>user</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="index.php?page=menu" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>menu</p>
-                            </a>
-                        </li>
-                    </ul>
                 </li>
-                <li class="nav-item has-treeview">
-                    <a href="#" class="nav-link">
-                        <i class="fas fa-shopping-cart"></i>
+                <li class="nav-item">
+                    <a href="index.php?page=absent"
+                        class="nav-link <?php if ($_GET['page']=='absent'){echo "active";} ?>">
+                        <i class="nav-icon fas fa-table"></i>
                         <p>
-                            Transactional Data
-                            <i class="fas fa-angle-left right"></i>
+                            Absent
                         </p>
                     </a>
-                <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="pages/layout/top-nav.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Transaksi Baru</p>
-                            </a>
-                        </li>
-                    </ul>
                 </li>
-                    <li class="nav-item">
-                            <a href="pages/examples/profile.html" class="nav-link">
-                            <i class="fas fa-clipboard fa-lg"></i>
-                        <p>laporan</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="pages/examples/profile.html" class="nav-link">
-                                <i class="fas fa-user fa-lg"></i>
-                                <p>Profile</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="logout.php" class="nav-link logout">
-                                <i class="fas fa-sign-out-alt fa-lg"></i>
-                                <p>Logout</p>
-                            </a>
-                        </li>
+                <li class="nav-item">
+                    <a href="index.php?page=menu" class="nav-link <?php if ($_GET['page']=='menu'){echo "active";} ?>">
+                        <i class="nav-icon fas fa-beer"></i>
+                        <p>
+                            Menu
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.php?page=category"
+                        class="nav-link <?php if ($_GET['page']=='category'){echo "active";} ?>">
+                        <i class="nav-icon fas fa-th-large"></i>
+                        <p>
+                            Category
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.php?page=variation"
+                        class="nav-link <?php if ($_GET['page']=='variation'){echo "active";} ?>">
+                        <i class="nav-icon fas fa-boxes"></i>
+                        <p>
+                            Variation
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.php?page=employee"
+                        class="nav-link <?php if ($_GET['page']=='employee'){echo "active";} ?>">
+                        <i class="nav-icon fas fa-user-tie"></i>
+                        <p>
+                            Employee
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.php?page=daily-report"
+                        class="nav-link <?php if ($_GET['page']=='daily-report'){echo "active";} ?>">
+                        <i class="nav-icon fas fa-file"></i>
+                        <p>
+                            Daily Report
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.php?page=expense-report"
+                        class="nav-link <?php if ($_GET['page']=='expense-report'){echo "active";} ?>">
+                        <i class="nav-icon fas fa-file-export"></i>
+                        <p>
+                            Expense Report
+                        </p>
+                    </a>
+                </li>
             </ul>
         </nav>
         <!-- /.sidebar-menu -->

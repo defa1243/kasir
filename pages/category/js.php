@@ -2,11 +2,9 @@
 
 
     function check(){
-        var menu = $('#menu').val();
-        var price = $('#price').val();
-        var information = $('#information').val();
+        var category = $('#category').val();
 
-        if(menu.length > 50 | price.length > 50 | information.length > 255){
+        if(category.length > 40 ){
             
 
 
@@ -19,51 +17,36 @@
         }
     }
 
-
-
     function read() {
-        $.get("pages/menu/read.php", {}, function (data, status) {
+        $.get("pages/category/read.php", {}, function (data, status) {
             $("#read").html(data);
         });
     }
 
     function createModal() {
         $('#btn-create').click();
-        $.get("pages/menu/create.php", {}, function (data, status) {
+        $.get("pages/category/create.php", {}, function (data, status) {
             $("#modal").html(data);
         });
     }
 
 
     function store() {
-        var menu = $('#menu').val();
-        var price = $('#price').val();
         var category = $('#category').val();
 
 
-        if (menu == '') {
-            $('#requiredmenu').css('display', 'block');
-        } else {
-            $('#requiredmenu').css('display', 'none');
-        }
-
-        if (price == '') {
-            $('#requiredprice').css('display', 'block');
-        } else {
-            $('#requiredprice').css('display', 'none');
-        }
         if (category == '') {
             $('#requiredcategory').css('display', 'block');
         } else {
             $('#requiredcategory').css('display', 'none');
         }
 
-        if (menu != '' && price != '' && category != '') {
+        if (category != '') {
             var data = $('#dataStore').serialize();
             var message = "Successfully Create Data";
             $.ajax({
                 type: "POST",
-                url: "pages/menu/read.php?action=store",
+                url: "pages/category/read.php?action=store",
                 data: data,
                 typeData: "json",
                 success: function (response) {
@@ -78,7 +61,7 @@
     function editModal(id) {
         $('#btn-create').click();
 
-        $.get("pages/menu/edit.php?id=" + id + "", {}, function (data, status) {
+        $.get("pages/category/edit.php?id=" + id + "", {}, function (data, status) {
             $("#modal").html(data);
         });
     }
@@ -86,35 +69,21 @@
     function update() {
 
 
-        var menu = $('#menu').val();
-        var price = $('#price').val();
         var category = $('#category').val();
 
 
-        if (menu == '') {
-            $('#requiredmenu').css('display', 'block');
-        } else {
-            $('#requiredmenu').css('display', 'none');
-        }
-
-        if (price == '') {
-            $('#requiredprice').css('display', 'block');
-        } else {
-            $('#requiredprice').css('display', 'none');
-        }
-
         if (category == '') {
-            $('#requiredcategkory').css('display', 'block');
+            $('#requiredcategory').css('display', 'block');
         } else {
             $('#requiredcategory').css('display', 'none');
         }
 
-        if (menu != '' && price != '' && category != '') {
+        if (category != '') {
             var data = $('#dataStore').serialize();
             var message = "Successfully Update Data";
             $.ajax({
                 type: "POST",
-                url: "pages/menu/read.php?action=update",
+                url: "pages/category/read.php?action=update",
                 data: data,
                 typeData: "json",
                 success: function (response) {
@@ -141,7 +110,7 @@
         }).then((result) => {
             if (result.isConfirmed) {
                 var message = "Successfully Deleted Data";
-                $.get("pages/menu/read.php?action=delete&id=" + id + "", {}, function (data, status) {
+                $.get("pages/category/read.php?action=delete&id=" + id + "", {}, function (data, status) {
                     read();
                     actionAlert(message);
                 });

@@ -4,7 +4,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Menu</h1>
+                    <h1>Daily Report</h1>
                 </div>
             </div>
         </div><!-- /.container-fluid -->
@@ -17,11 +17,8 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <a href="javascript:void(0)" onclick="createModal()" class="btn btn-primary col-lg-1">Create</a>
-                            <button type="button" class="btn btn-primary " style="display: none;" id="btn-create" data-toggle="modal"
-                                data-target="#exampleModal">
-                                Launch demo modal
-                            </button>
+                            <a href="javascript:void(0)" onclick="store()" class="btn btn-primary col-lg-1 col-12">Create</a>
+                            <a href="pages/daily-report/report.php" target="_blank" class="btn btn-success col-6 mt-2">Export</a>
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body" id="read">

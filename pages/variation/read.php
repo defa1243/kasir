@@ -10,29 +10,27 @@ $upload = new Upload($koneksi);
 
 error_reporting(1);
 
-$sql = "SELECT * FROM menu AS a INNER JOIN category AS b ON a.category_id = b.id_category";
+$sql = "SELECT * FROM variation AS a INNER JOIN category AS b ON a.category_id = b.id_category";
 $data = $proses->listData($sql);
 ?>
 <table id="example1" class="table table-bordered table-striped">
     <thead>
         <tr>
-            <th>Menu</th>
+            <th>Variation Type</th>
             <th>Price</th>
             <th>Category</th>
-            <th>Information</th>
             <th>Action</th>
         </tr>
     </thead>
     <tbody>
         <?php foreach($data as $x) {?>
         <tr>
-            <td><?= $x['menu_name'] ?></td>
-            <td><?= "Rp. " . number_format($x['price'],0,',','.'); ?> </td>
+            <td><?= $x['variation_type'] ?></td>
+            <td><?= $x['variation_price'] ?></td>
             <td><?= $x['category_type'] ?></td>
-            <td><?= $x['information'] ?></td>
             <td> 
-                <a class="badge badge-success text-light" href="javascript:void(0)" onclick="editModal(<?= $x['id_menu'] ?>)"><i class="fas fa-pencil-alt mr-2"></i></i>Edit</a>
-                <a class="badge badge-danger text-light" href="javascript:void(0)" onclick="deleteData(<?= $x['id_menu'] ?>)"><i class="fas fa-trash-alt"></i>Delete</a></td>
+                <a class="badge badge-success text-light" href="javascript:void(0)" onclick="editModal(<?= $x['id_variation'] ?>)"><i class="fas fa-pencil-alt mr-2"></i></i>Edit</a>
+                <a class="badge badge-danger text-light" href="javascript:void(0)" onclick="deleteData(<?= $x['id_variation'] ?>)"><i class="fas fa-trash-alt"></i>Delete</a></td>
         </tr>
         <?php } ?>
     </tbody>
@@ -53,25 +51,23 @@ $data = $proses->listData($sql);
 <?php 
 if(!empty($_GET['action'] =='store')){
 
-    $menu = strip_tags($_POST['menu']);
+    $variation = strip_tags($_POST['variation']);
     $price = strip_tags($_POST['price']);
     $category = strip_tags($_POST['category']);
-    $info = strip_tags($_POST['info']);
 
-    $sql = "INSERT INTO `menu`(`id_menu`,`category_id`, `menu_name`, `price`,`information`) VALUES (0,'$category','$menu','$price','$info')";
+    $sql = "INSERT INTO `variation`(`id_variation`, `variation_type`, `variation_price`,`category_id`) VALUES (0,'$variation','$price','$category')";
     $proses->sqlAction($sql);
 }elseif(!empty($_GET['action'] =='update')){
-    $menu = strip_tags($_POST['menu']);
+    $variation = strip_tags($_POST['variation']);
     $price = strip_tags($_POST['price']);
-    $category = strip_tags($_POST['category']);
-    $info = strip_tags($_POST['info']);
     $id = strip_tags($_POST['id']);
+    $category = strip_tags($_POST['category']);
 
-    $sql = "UPDATE `menu` SET `menu_name`='$menu',`category_id`='$category',`price`='$price',`information`='$info' WHERE id_menu = $id";
+    $sql = "UPDATE `variation` SET `variation_type`='$variation',`variation_price`='$price', `category_id` = '$category' WHERE id_variation = $id";
     $proses->sqlAction($sql);
 }elseif(!empty($_GET['action']=='delete')){
     $id = strip_tags($_GET['id']);
-    $sql = "DELETE FROM `menu` WHERE id_menu = $id ";
+    $sql = "DELETE FROM `variation` WHERE id_variation = $id ";
     $proses->sqlAction($sql);
 }
 

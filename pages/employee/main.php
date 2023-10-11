@@ -4,7 +4,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>DataTables</h1>
+                    <h1>Employees</h1>
                 </div>
             </div>
         </div><!-- /.container-fluid -->
@@ -17,7 +17,8 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <a href="javascript:void(0)" onclick="createModal()" class="btn btn-primary">Create</a>
+                            
+                            <a href="javascript:void(0)" onclick="createModal()" class="btn btn-primary col-lg-1 col-12">Create</a>
                             <button type="button" class="btn btn-primary " style="display: none;" id="btn-create" data-toggle="modal"
                                 data-target="#exampleModal">
                                 Launch demo modal
