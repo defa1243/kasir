@@ -26,7 +26,7 @@ $data = $proses->listData($sql);
         <?php foreach($data as $x) {?>
         <tr>
             <td><?= $x['variation_type'] ?></td>
-            <td><?= $x['variation_price'] ?></td>
+            <td><?= "Rp. " . number_format($x['variation_price'],0,',','.');?></td>
             <td><?= $x['category_type'] ?></td>
             <td> 
                 <a class="badge badge-success text-light" href="javascript:void(0)" onclick="editModal(<?= $x['id_variation'] ?>)"><i class="fas fa-pencil-alt mr-2"></i></i>Edit</a>

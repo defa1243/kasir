@@ -1,5 +1,4 @@
 <?php
-if(!empty($_SESSION)){ }else{ session_start(); }
 
 // if(empty($_SESSION['role'] == "" )){}else{ header('location:login.php?logindulu'); }
 require 'database/panggil.php';

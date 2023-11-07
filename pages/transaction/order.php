@@ -70,14 +70,14 @@ $variation = $proses->listData($sql);
             <select id="variation1" class="form-control" onchange="addSelect(1)">
                 <option value="">-- Select Variation --</option>
                 <?php foreach($variation as $x) {?>
-                <option value="<?= $x['variation_type'] ?><?= $x['variation_price'] ?>"><?= $x['variation_type'] ?> --> <?= $x['variation_price'] ?></option>
+                <option value="<?= $x['variation_type'] ?> + <?= "Rp. " . number_format($x['variation_price'],0,',','.');?>  "><?= $x['variation_type'] ?> --> <?= $x['variation_price'] ?></option>
                 <?php } ?>
             </select>
             <div class="var mt-1" style="display: none;">
                 <select id="variation2" class="form-control" onchange="addSelect(2)">
                     <option value="">-- Select Variation --</option>
                     <?php foreach($variation as $x) {?>
-                    <option value="<?= $x['variation_type'] ?><?= $x['variation_price'] ?>"><?= $x['variation_type'] ?> --> <?= $x['variation_price'] ?></option>
+                    <option value="<?= $x['variation_type'] ?> + <?= "Rp. " . number_format($x['variation_price'],0,',','.');?>  "><?= $x['variation_type'] ?> --> <?= $x['variation_price'] ?></option>
                     <?php } ?>
                 </select>
             </div>
@@ -85,7 +85,7 @@ $variation = $proses->listData($sql);
                 <select id="variation3" class="form-control" onchange="addSelect(3)">
                     <option value="">-- Select Variation --</option>
                     <?php foreach($variation as $x) {?>
-                    <option value="<?= $x['variation_type'] ?><?= $x['variation_price'] ?>"><?= $x['variation_type'] ?> --> <?= $x['variation_price'] ?></option>
+                    <option value="<?= $x['variation_type'] ?> + <?= "Rp. " . number_format($x['variation_price'],0,',','.');?>  "><?= $x['variation_type'] ?> --> <?= $x['variation_price'] ?></option>
                     <?php } ?>
                 </select>
             </div>
@@ -93,7 +93,7 @@ $variation = $proses->listData($sql);
                 <select id="variation4" class="form-control" onchange="addSelect(4)">
                     <option value="">-- Select Variation --</option>
                     <?php foreach($variation as $x) {?>
-                    <option value="<?= $x['variation_type'] ?><?= $x['variation_price'] ?>"><?= $x['variation_type'] ?> --> <?= $x['variation_price'] ?></option>
+                    <option value="<?= $x['variation_type'] ?> + <?= "Rp. " . number_format($x['variation_price'],0,',','.');?>  "><?= $x['variation_type'] ?> --> <?= $x['variation_price'] ?></option>
                     <?php } ?>
                 </select>
             </div>
@@ -101,7 +101,7 @@ $variation = $proses->listData($sql);
                 <select id="variation5" class="form-control" onchange="addSelect(5)">
                     <option value="">-- Select Variation --</option>
                     <?php foreach($variation as $x) {?>
-                    <option value="<?= $x['variation_type'] ?><?= $x['variation_price'] ?>"><?= $x['variation_type'] ?> --> <?= $x['variation_price'] ?></option>
+                    <option value="<?= $x['variation_type'] ?> + <?= "Rp. " . number_format($x['variation_price'],0,',','.');?>  "><?= $x['variation_type'] ?> --> <?= $x['variation_price'] ?></option>
                     <?php } ?>
                 </select>
             </div>
@@ -109,7 +109,7 @@ $variation = $proses->listData($sql);
                 <select id="variation6" class="form-control" onchange="addSelect(6)">
                     <option value="">-- Select Variation --</option>
                     <?php foreach($variation as $x) {?>
-                    <option value="<?= $x['variation_type'] ?><?= $x['variation_price'] ?>"><?= $x['variation_type'] ?> --> <?= $x['variation_price'] ?></option>
+                    <option value="<?= $x['variation_type'] ?> + <?= "Rp. " . number_format($x['variation_price'],0,',','.');?>  "><?= $x['variation_type'] ?> --> <?= $x['variation_price'] ?></option>
                     <?php } ?>
                 </select>
             </div>
@@ -117,7 +117,7 @@ $variation = $proses->listData($sql);
                 <select id="variation7" class="form-control" onchange="addSelect(7)">
                     <option value="">-- Select Variation --</option>
                     <?php foreach($variation as $x) {?>
-                    <option value="<?= $x['variation_type'] ?><?= $x['variation_price'] ?>"><?= $x['variation_type'] ?> --> <?= $x['variation_price'] ?></option>
+                    <option value="<?= $x['variation_type'] ?> + <?= "Rp. " . number_format($x['variation_price'],0,',','.');?>  "><?= $x['variation_type'] ?> --> <?= $x['variation_price'] ?></option>
                     <?php } ?>
                 </select>
             </div>
@@ -125,7 +125,7 @@ $variation = $proses->listData($sql);
                 <select id="variation8" class="form-control" onchange="addSelect(8)">
                     <option value="">-- Select Variation --</option>
                     <?php foreach($variation as $x) {?>
-                    <option value="<?= $x['variation_type'] ?><?= $x['variation_price'] ?>"><?= $x['variation_type'] ?> --> <?= $x['variation_price'] ?></option>
+                    <option value="<?= $x['variation_type'] ?> + <?= "Rp. " . number_format($x['variation_price'],0,',','.');?>  "><?= $x['variation_type'] ?> --> <?= $x['variation_price'] ?></option>
                     <?php } ?>
                 </select>
             </div>
@@ -133,7 +133,7 @@ $variation = $proses->listData($sql);
                 <select id="variation9" class="form-control" onchange="addSelect(9)">
                     <option value="">-- Select Variation --</option>
                     <?php foreach($variation as $x) {?>
-                    <option value="<?= $x['variation_type'] ?><?= $x['variation_price'] ?>"><?= $x['variation_type'] ?> --> <?= $x['variation_price'] ?></option>
+                    <option value="<?= $x['variation_type'] ?> + <?= "Rp. " . number_format($x['variation_price'],0,',','.');?>  "><?= $x['variation_type'] ?> --> <?= $x['variation_price'] ?></option>
                     <?php } ?>
                 </select>
             </div>
@@ -141,7 +141,7 @@ $variation = $proses->listData($sql);
                 <select id="variation10" class="form-control" onchange="addSelect(10)">
                     <option value="">-- Select Variation --</option>
                     <?php foreach($variation as $x) {?>
-                    <option value="<?= $x['variation_type'] ?><?= $x['variation_price'] ?>"><?= $x['variation_type'] ?> --> <?= $x['variation_price'] ?></option>
+                    <option value="<?= $x['variation_type'] ?> + <?= "Rp. " . number_format($x['variation_price'],0,',','.');?>  "><?= $x['variation_type'] ?> --> <?= $x['variation_price'] ?></option>
                     <?php } ?>
                 </select>
             </div>

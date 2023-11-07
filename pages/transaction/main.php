@@ -14,7 +14,7 @@
                     </div>
                     <hr>
                     <div class="row">
-                        <a href="javascript:void(0)" class="btn btn-success col-4" id="showhistory"
+                        <a href="javascript:void(0)" class="btn btn-success col-4 mr-2" id="showhistory"
                             onclick="showHistory()">History</a>
                         <a href="javascript:void(0)" class="btn btn-secondary col-6" id="backread" onclick="backRead()"
                             style="display: none;">Order Transaction</a>

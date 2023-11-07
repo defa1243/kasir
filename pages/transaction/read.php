@@ -62,6 +62,26 @@ $sql ="SELECT MAX(id_transaction) as id FROM transaction";
 <?php 
 date_default_timezone_set('Asia/Jakarta');
 if(!empty($_GET['action'] =='store')){
+
+
+    $sql = "SELECT max(id_daily_report) as id FROM daily_report";
+    $dataid = $proses->showData($sql);
+    $id = $dataid['id'];
+    
+    $sql = "SELECT * FROM daily_report WHERE id_daily_report = $id";
+    $data = $proses->showData($sql);
+
+    $datenow = date("Y-m-d");
+    
+    if($data['date'] !== $datenow ){
+        $sql = "INSERT INTO `daily_report`(`id_daily_report`, `balance`, `date`) VALUES (0,'0','$datenow')";
+        $proses->sqlAction($sql);
+    }
+
+
+
+
+
     $ids = $_GET['id'];
     $change = $_GET['change'];
     $names = $_GET['name'];
@@ -84,7 +104,10 @@ if(!empty($_GET['action'] =='store')){
     $variations10 =$_GET['variation10'];
     
     function hapusAngkaDariString($string) {
-        return preg_replace("/\d+/", "", $string);
+        $position = strpos($string, '+');
+        $positions = $position -1;
+        return substr($string ,0 ,$positions);
+    
     }
 
     for ($i = 0; $i < count($variations1); $i++) {
@@ -98,7 +121,6 @@ if(!empty($_GET['action'] =='store')){
         $vari8[$i] = hapusAngkaDariString($variations8[$i]);
         $vari9[$i] = hapusAngkaDariString($variations9[$i]);
         $vari10[$i] = hapusAngkaDariString($variations10[$i]);
-
     }
 
     $sql = "SELECT max(transaction_code) AS max FROM `transaction`";
@@ -292,7 +314,6 @@ if(!empty($_GET['action'] =='store')){
             $sql = "UPDATE `daily_report` SET  `balance`='$valuebalance' WHERE id_daily_report = '$id'";
             $proses->sqlAction($sql);
         }else{
-            date_default_timezone_set('Asia/Jakarta');
             $time = date("Y-m-d");
 
             $sql = "INSERT INTO `daily_report`(`id_daily_report`, `balance`, `date`) VALUES (0,'$totals','$time')";

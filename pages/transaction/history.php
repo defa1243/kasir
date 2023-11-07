@@ -39,7 +39,7 @@ if($_GET['begin'] != '' && $_GET['end'] != ''){
         <tr>
             <td><?= $x['transaction_code'] ?></td>
             <td><?= $x['datetime'] ?></td>
-            <td><?= $x['total'] ?></td>
+            <td><?= "Rp. " . number_format($x['total'],0,',','.');?></td>
             <td> 
                 <a class="p-1 badge badge-info text-light mr-1" href="javascript:void(0)" onclick="detailData(<?= $x['id_transaction'] ?>)"><i class="fas fa-list-alt mr-2"></i></i>Detail</a>
                 <a class="p-1 badge badge-danger text-light mr-1" href="javascript:void(0)" onclick="deleteData(<?= $x['id_transaction'] ?>)"><i class="fas fa-trash-alt"></i>Delete And Restore Balance</a>

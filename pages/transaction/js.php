@@ -14,12 +14,12 @@ $sql = "SELECT * FROM menu";
 $menu = $proses->listData($sql);
 ?>
 <script>
-    function filterby(){
+    function filterby() {
         var value = $('#filterby').val();
-        if(value == 'month'){
+        if (value == 'month') {
             $('#picker').removeClass("d-none");
             $('#applyBtn').removeClass("d-none");
-        }else{
+        } else {
             $('#picker').addClass("d-none");
             $('#applyBtn').addClass("d-none");
             $('#select1').val("");
@@ -28,9 +28,9 @@ $menu = $proses->listData($sql);
         }
     }
 
-    function methodpay(){
+    function methodpay() {
         var methodpay = $('#method').val();
-        if(methodpay == 'cash'){
+        if (methodpay == 'cash') {
             var met = '';
             met += '<div>';
             met += '<div class="mb-3" id="remove-cash">';
@@ -45,16 +45,16 @@ $menu = $proses->listData($sql);
             met += '</div>';
 
             $('#cash').append(met);
-        }else{
+        } else {
             $('#remove-cash').parent().remove();
         }
     }
 
-    
 
-    
 
-    function moneychange(){
+
+
+    function moneychange() {
         var tot = $('#total').val();
         var total = tot.replace(/[a-z,A-Z,., ]/g, '');
         var totalvalue = parseInt(total);
@@ -69,35 +69,34 @@ $menu = $proses->listData($sql);
             currency: 'IDR'
         }).format(value);
 
-    // Display the formatted value
+        // Display the formatted value
         change.val(formattedValue);
         var valueformat = formatRupiah(cas, 'Rp .')
         format.val(valueformat);
 
-        if(cashvalue < totalvalue){
+        if (cashvalue < totalvalue) {
             $('#dengan-rupiah').addClass('is-invalid');
             $('#cash-danger').css('display', 'block');
-        }else{
+        } else {
             $('#dengan-rupiah').removeClass('is-invalid');
             $('#cash-danger').css('display', 'none');
         }
     }
 
-    function formatRupiah(angka, prefix)
-        {
-            var number_string = angka.replace(/[^,\d]/g, '').toString(),
-                split    = number_string.split(','),
-                sisa     = split[0].length % 3,
-                rupiah     = split[0].substr(0, sisa),
-                ribuan     = split[0].substr(sisa).match(/\d{3}/gi);
-                
-            if (ribuan) {
-                separator = sisa ? '.' : '';
-                rupiah += separator + ribuan.join('.');
-            }
-            
-            rupiah = split[1] != undefined ? rupiah + ',' + split[1] : rupiah;
-            return prefix == undefined ? rupiah : (rupiah ? 'Rp. ' + rupiah : '');
+    function formatRupiah(angka, prefix) {
+        var number_string = angka.replace(/[^,\d]/g, '').toString(),
+            split = number_string.split(','),
+            sisa = split[0].length % 3,
+            rupiah = split[0].substr(0, sisa),
+            ribuan = split[0].substr(sisa).match(/\d{3}/gi);
+
+        if (ribuan) {
+            separator = sisa ? '.' : '';
+            rupiah += separator + ribuan.join('.');
+        }
+
+        rupiah = split[1] != undefined ? rupiah + ',' + split[1] : rupiah;
+        return prefix == undefined ? rupiah : (rupiah ? 'Rp. ' + rupiah : '');
     }
 
     function addSelect(number) {
@@ -181,26 +180,31 @@ $menu = $proses->listData($sql);
         }
 
         if (vartype1 != '') {
-                var tomenvar = priceint + varprice1;
-                if (vartype2 != '') {
-                    var tomenvar = priceint + varprice1 + varprice2 ;
-                    if (vartype3 != '') {
-                        var tomenvar = priceint + varprice1 + varprice2 + varprice3;
-                        if (vartype4 != '') {
-                            var tomenvar = priceint + varprice1 + varprice2 + varprice3 + varprice4 ;
-                            if (vartype5 != '') {
-                                var tomenvar = priceint + varprice1 + varprice2 + varprice3 + varprice4 + varprice5;
-                                if (vartype6 != '') {
-                                    var tomenvar = priceint + varprice1 + varprice2 + varprice3 + varprice4 + varprice5 + varprice6;
-                                    if (vartype7 != '') {
-                                        var tomenvar = priceint + varprice1 + varprice2 + varprice3 + varprice4 + varprice5 + varprice6 + varprice7 ;
-                                        if (vartype8 != '') {
-                                            var tomenvar = priceint + varprice1 + varprice2 + varprice3 + varprice4 + varprice5 + varprice6 + varprice7 + varprice8;
-                                            if (vartype9 != '') {
-                                                var tomenvar = priceint + varprice1 + varprice2 + varprice3 + varprice4 + varprice5 + varprice6 + varprice7 + varprice8 + varprice9;
-                                                if (vartype10 != '') {
-                                                    var tomenvar = priceint + varprice1 + varprice2 + varprice3 + varprice4 + varprice5 + varprice6 + varprice7 + varprice8 + varprice9 + varprice10;
-                                                }
+            var tomenvar = priceint + varprice1;
+            if (vartype2 != '') {
+                var tomenvar = priceint + varprice1 + varprice2;
+                if (vartype3 != '') {
+                    var tomenvar = priceint + varprice1 + varprice2 + varprice3;
+                    if (vartype4 != '') {
+                        var tomenvar = priceint + varprice1 + varprice2 + varprice3 + varprice4;
+                        if (vartype5 != '') {
+                            var tomenvar = priceint + varprice1 + varprice2 + varprice3 + varprice4 + varprice5;
+                            if (vartype6 != '') {
+                                var tomenvar = priceint + varprice1 + varprice2 + varprice3 + varprice4 + varprice5 +
+                                    varprice6;
+                                if (vartype7 != '') {
+                                    var tomenvar = priceint + varprice1 + varprice2 + varprice3 + varprice4 +
+                                        varprice5 + varprice6 + varprice7;
+                                    if (vartype8 != '') {
+                                        var tomenvar = priceint + varprice1 + varprice2 + varprice3 + varprice4 +
+                                            varprice5 + varprice6 + varprice7 + varprice8;
+                                        if (vartype9 != '') {
+                                            var tomenvar = priceint + varprice1 + varprice2 + varprice3 + varprice4 +
+                                                varprice5 + varprice6 + varprice7 + varprice8 + varprice9;
+                                            if (vartype10 != '') {
+                                                var tomenvar = priceint + varprice1 + varprice2 + varprice3 +
+                                                    varprice4 + varprice5 + varprice6 + varprice7 + varprice8 +
+                                                    varprice9 + varprice10;
                                             }
                                         }
                                     }
@@ -209,9 +213,10 @@ $menu = $proses->listData($sql);
                         }
                     }
                 }
-            }else{
-                var tomenvar = priceint;
             }
+        } else {
+            var tomenvar = priceint;
+        }
 
 
         if (qty != "") {
@@ -236,25 +241,25 @@ $menu = $proses->listData($sql);
             list += '</div>';
             list += '<p>';
             if (vartype1 != '') {
-                list += vartype1 + "+" + varprice1;
-                if (vartype2 != '') {
-                    list += "," + " " + vartype2 + "+" + varprice2;
-                    if (vartype3 != '') {
-                        list += "," + " " + vartype3 + "+" + varprice3;
-                        if (vartype4 != '') {
-                            list += "," + " " + vartype4 + "+" + varprice4;
-                            if (vartype5 != '') {
-                                list += "," + " " + vartype5 + "+" + varprice5;
-                                if (vartype6 != '') {
-                                    list += "," + " " + vartype6 + "+" + varprice6;
-                                    if (vartype7 != '') {
-                                        list += "," + " " + vartype7 + "+" + varprice7;
-                                        if (vartype8 != '') {
-                                            list += "," + " " + vartype8 + "+" + varprice8;
-                                            if (vartype9 != '') {
-                                                list += "," + " " + vartype9 + "+" + varprice9;
-                                                if (vartype10 != '') {
-                                                    list += "," + " " + vartype10 + "+" + varprice10;
+                list += var1 ;
+                if (var2 != '') {
+                    list += " " + "&" + " " + var2 ;
+                    if (var3 != '') {
+                        list += " " + "&" + " " + var3 ;
+                        if (var4 != '') {
+                            list += " " + "&" + " " + var4 ;
+                            if (var5 != '') {
+                                list += " " + "&" + " " + var5 ;
+                                if (var6 != '') {
+                                    list += " " + "&" + " " + var6 ;
+                                    if (var7 != '') {
+                                        list += " " + "&" + " " + var7 ;
+                                        if (var8 != '') {
+                                            list += " " + "&" + " " + var8 ;
+                                            if (var9 != '') {
+                                                list += " " + "&" + " " + var9 ;
+                                                if (var10 != '') {
+                                                    list += " " + "&" + " " + var10 ;
                                                 }
                                             }
                                         }
@@ -351,8 +356,9 @@ $menu = $proses->listData($sql);
         $.get("pages/transaction/read.php", {}, function (data, status) {
             $("#read").html(data);
         });
-        
+
     }
+
     function showHistory() {
         $.get("pages/transaction/history.php", {}, function (data, status) {
             $("#read").html(data);
@@ -363,37 +369,37 @@ $menu = $proses->listData($sql);
             $('#remove').remove();
             var orval = $('#orderValue').val();
             var awal = parseInt(orval) - 1;
-            $('#orderValue').val(parseInt(orval) - awal );
+            $('#orderValue').val(parseInt(orval) - awal);
             showButton();
         });
     }
 
-    function storeprint(){
+    function storeprint() {
         var method = $('#method').val();
-       
+
         var mesalert = "Less Money";
 
-        if(method == 'cash'){
+        if (method == 'cash') {
             var tot = $("#total").val();
             var total = tot.replace(/[a-z,A-Z,., ]/g, '')
             var totalvalue = parseInt(total);
-            var cas= $('#dengan-rupiah').val();
-            var cash= cas.replace(/[a-z,A-Z,., ]/g, '');
+            var cas = $('#dengan-rupiah').val();
+            var cash = cas.replace(/[a-z,A-Z,., ]/g, '');
             var cashvalue = parseInt(cash);
 
 
-            if(cashvalue >= totalvalue){
+            if (cashvalue >= totalvalue) {
                 store();
-                setTimeout(function(){
+                setTimeout(function () {
                     read();
                     $('#butPrint').click();
                 }, 1500);
-            }else{
+            } else {
                 actionAlert(mesalert);
             }
-        }else{
+        } else {
             store();
-            setTimeout(function(){
+            setTimeout(function () {
                 read();
                 $('#butPrint').click();
             }, 1500);
@@ -403,44 +409,55 @@ $menu = $proses->listData($sql);
 
 
 
-        
+
     }
 
-    function butPrint(id){
-        window.open("pages/transaction/print.php?id="+id+"");
+    function butPrint(id) {
+        window.open("pages/transaction/print.php?id=" + id + "");
     }
 
     // function remvorder(){
     // }
-        
-    function applyFilter(){
+
+    function applyFilter() {
         var v1 = $('#select1').val();
         var v2 = $('#select2').val();
 
-        if(v1 != '' && v2 != ''){
-            $.get("pages/transaction/history.php?begin="+v1+"&end="+v2+"", {}, function (data, status) {
+        if (v1 != '' && v2 != '') {
+            $.get("pages/transaction/history.php?begin=" + v1 + "&end=" + v2 + "", {}, function (data, status) {
                 $("#read").html(data);
             });
-        }else{
+        } else {
             $.get("pages/transaction/history.php", {}, function (data, status) {
                 $("#read").html(data);
             });
         }
     }
 
-    function backRead(){
+    function backRead() {
         read();
         $('#backread').css('display', 'none');
         $('#printhistory').css('display', 'none');
         $('#filterbypicker').addClass("d-none");
         $('#showhistory').css('display', 'block');
+        $('#picker').addClass('d-none');
+        $('#filterby').val('');
+        $('#select1').val('');
+        $('#select2').val('');
+
     }
 
-    function detailData(id){
+    function detailData(id) {
         $.get("pages/transaction/detail.php?id=" + id + "", {}, function (data, status) {
             $("#read").html(data);
             $('#backread').css('display', 'block');
             $('#showhistory').css('display', 'block');
+            $('#printhistory').css('display', 'none');
+            $('#filterbypicker').addClass('d-none');
+            $('#picker').addClass('d-none');
+            $('#filterby').val('');
+            $('#select1').val('');
+            $('#select2').val('');
         });
     }
 
@@ -461,15 +478,15 @@ $menu = $proses->listData($sql);
         var mesalert = "Less Money";
 
 
-        if(method == 'cash'){
+        if (method == 'cash') {
             var tot = $("#total").val();
             var total = tot.replace(/[a-z,A-Z,., ]/g, '')
             var totalvalue = parseInt(total);
-            var cas= $('#dengan-rupiah').val();
-            var cash= cas.replace(/[a-z,A-Z,., ]/g, '');
+            var cas = $('#dengan-rupiah').val();
+            var cash = cas.replace(/[a-z,A-Z,., ]/g, '');
             var cashvalue = parseInt(cash);
 
-            if(cashvalue >= totalvalue){
+            if (cashvalue >= totalvalue) {
                 $.ajax({
                     type: "GET",
                     url: "pages/transaction/read.php?action=store",
@@ -482,15 +499,15 @@ $menu = $proses->listData($sql);
                         $('#remove').remove();
                         var orval = $('#orderValue').val();
                         var awal = parseInt(orval) - 1;
-                        $('#orderValue').val(parseInt(orval) - awal );
+                        $('#orderValue').val(parseInt(orval) - awal);
                         showButton();
                         readBalance();
                     }
                 })
-            }else{
+            } else {
                 actionAlert(mesalert);
             }
-        }else{
+        } else {
             $.ajax({
                 type: "GET",
                 url: "pages/transaction/read.php?action=store",
@@ -503,14 +520,14 @@ $menu = $proses->listData($sql);
                     $('#remove').remove();
                     var orval = $('#orderValue').val();
                     var awal = parseInt(orval) - 1;
-                    $('#orderValue').val(parseInt(orval) - awal );
+                    $('#orderValue').val(parseInt(orval) - awal);
                     showButton();
                     readBalance();
                 }
             })
         }
 
-        
+
     }
 
     function editModal(id) {
@@ -542,6 +559,7 @@ $menu = $proses->listData($sql);
             }
         })
     }
+
     function deleteDatabal(id) {
 
         Swal.fire({
@@ -564,7 +582,7 @@ $menu = $proses->listData($sql);
         })
     }
 
-    function history(){
+    function history() {
         $.get("pages/transaction/history.php", {}, function (data, status) {
             $("#read").html(data);
             $('#backread').css('display', 'block');
@@ -572,15 +590,15 @@ $menu = $proses->listData($sql);
         });
     }
 
-    function exportdata(){
+    function exportdata() {
         var select = $('#filterby').val();
         var v1 = $('#select1').val();
         var v2 = $('#select2').val();
-        if(select == 'month'){
-            var url = "pages/transaction/report.php?begin="+v1+"&end="+v2+"";
+        if (select == 'month') {
+            var url = "pages/transaction/report.php?begin=" + v1 + "&end=" + v2 + "";
             window.open(url, "_blank");
 
-        }else{
+        } else {
             var url = "pages/transaction/report.php";
             window.open(url, "_blank");
         }

@@ -113,23 +113,23 @@ for ($i = 0; $i < count($qtyvalue); $i++) {
                             <div class="row"><strong>Variation</strong></div>
                             <p><?= $variations1[$index] ?>
                                 <?php    if($variations2[$index] != ''){?>
-                                    <?= ","." ".$variations2[$index]  ?>
+                                    <?= " "."&"." ".$variations2[$index]  ?>
                                     <?php    if($variations3[$index] != ''){?>
-                                        <?= ","." ".$variations3[$index]  ?>
+                                        <?= " "."&"." ".$variations3[$index]  ?>
                                         <?php    if($variations4[$index] != ''){?>
-                                            <?= ","." ".$variations4[$index]  ?>
+                                            <?= " "."&"." ".$variations4[$index]  ?>
                                             <?php    if($variations5[$index] != ''){?>
-                                                <?= ","." ".$variations5[$index]  ?>
+                                                <?= " "."&"." ".$variations5[$index]  ?>
                                                 <?php    if($variations6[$index] != ''){?>
-                                                    <?= ","." ".$variations6[$index]  ?>
+                                                    <?= " "."&"." ".$variations6[$index]  ?>
                                                     <?php    if($variations7[$index] != ''){?>
-                                                        <?= ","." ".$variations7[$index]  ?>
+                                                        <?= " "."&"." ".$variations7[$index]  ?>
                                                         <?php    if($variations8[$index] != ''){?>
-                                                            <?= ","." ".$variations8[$index]  ?>
+                                                            <?= " "."&"." ".$variations8[$index]  ?>
                                                             <?php    if($variations9[$index] != ''){?>
-                                                                <?= ","." ".$variations9[$index]  ?>
+                                                                <?= " "."&"." ".$variations9[$index]  ?>
                                                                 <?php    if($variations10[$index] != ''){?>
-                                                                    <?= ","." ".$variations10[$index]  ?>
+                                                                    <?= " "."&"." ".$variations10[$index]  ?>
                                                                     
                                                                 <?php } ?>
                                                             <?php } ?>
@@ -148,6 +148,7 @@ for ($i = 0; $i < count($qtyvalue); $i++) {
                             </div>
                         </div>
                         
+
                         <input type="hidden" name="id[]" value="<?= $ids[$index] ?>">
                         <input type="hidden" name="name[]" value="<?= $names[$index] ?>">
                         <input type="hidden" name="qty[]" value="<?= $qtys[$index] ?>">
